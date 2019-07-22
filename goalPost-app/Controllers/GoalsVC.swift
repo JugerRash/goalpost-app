@@ -8,6 +8,8 @@
 
 import UIKit
 
+let appDelegate = UIApplication.shared.delegate as? AppDelegate // wee need this to create an variable of managedContext to deal with coreData
+
 class GoalsVC: UIViewController {
 
     // Outlets -:

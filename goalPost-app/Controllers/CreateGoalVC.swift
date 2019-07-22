@@ -14,11 +14,17 @@ class CreateGoalVC: UIViewController {
     @IBOutlet weak var goalTxtView: UITextView!
     @IBOutlet weak var shortTermBtn: UIButton!
     @IBOutlet weak var longTermBtn: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
+    
+    // Variables -:
+    var goalType : GoalType = .shortTerm
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        nextBtn.bindToKeyboard()
+        shortTermBtn.setSelectedButton()
+        longTermBtn.setDeselectedButton()
+        goalTxtView.delegate = self
     }
     
     // Actions -:
@@ -26,12 +32,28 @@ class CreateGoalVC: UIViewController {
         dismissDetail()
     }
     @IBAction func shortTermBtnPressed(_ sender: Any) {
+        goalType = .shortTerm
+        shortTermBtn.setSelectedButton()
+        longTermBtn.setDeselectedButton()
     }
     @IBAction func longTermBtnPressed(_ sender: Any) {
+        goalType = .longTerm
+        shortTermBtn.setDeselectedButton()
+        longTermBtn.setSelectedButton()
     }
     @IBAction func nextBtnPressed(_ sender: Any) {
+        if goalTxtView.text != "" && goalTxtView.text != "What is your goal?" {
+            guard let finishGoalVC = storyboard?.instantiateViewController(withIdentifier: "FinishGoalVC") as? FinishGoalVC else { return }
+            finishGoalVC.initDetail(description: goalTxtView.text!, type: goalType)
+            presentingViewController?.presentSecondryDetail(finishGoalVC)
+        }
     }
-    
+}
 
 
+extension CreateGoalVC : UITextViewDelegate {
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        goalTxtView.text = ""
+        goalTxtView.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
+    }
 }

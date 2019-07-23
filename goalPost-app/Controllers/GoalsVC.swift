@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class GoalsVC: UIViewController {
 
@@ -41,4 +42,14 @@ extension GoalsVC : UITableViewDelegate , UITableViewDataSource {
         cell.configureCell(description: "Eat salad twice a week", type: .shortTerm, progress: 2)
         return cell
     }
+}
+
+// this extension for dealing with data from coreData
+extension GoalsVC {
+    
+    func fetchData(completion : (_ completion : Bool) -> ()){
+        guard let managedContext = appDlege
+        
+    }
+    
 }

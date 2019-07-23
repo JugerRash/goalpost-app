@@ -144,18 +144,39 @@
                                                         <constraint firstItem="wW1-b9-P2m" firstAttribute="top" secondItem="JNd-Ba-qgb" secondAttribute="top" constant="34" id="fVg-Ww-nRG"/>
                                                     </constraints>
                                                 </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uj8-XZ-tbz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="COMPLETE GOAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqj-Kh-1eM">
+                                                            <rect key="frame" x="56" y="14.5" width="263" height="41"/>
+                                                            <fontDescription key="fontDescription" name="AvenirNext-Heavy" family="Avenir Next" pointSize="30"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <color key="backgroundColor" red="0.91764705882352937" green="0.66274509803921566" blue="0.26666666666666666" alpha="0.80000000000000004" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <constraints>
+                                                        <constraint firstItem="bqj-Kh-1eM" firstAttribute="centerY" secondItem="Uj8-XZ-tbz" secondAttribute="centerY" id="KCW-on-NAj"/>
+                                                        <constraint firstItem="bqj-Kh-1eM" firstAttribute="centerX" secondItem="Uj8-XZ-tbz" secondAttribute="centerX" id="bOE-Yg-4f9"/>
+                                                    </constraints>
+                                                </view>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="JNd-Ba-qgb" firstAttribute="leading" secondItem="fA6-rs-O4f" secondAttribute="leading" constant="8" id="5zY-27-lqY"/>
+                                                <constraint firstAttribute="trailing" secondItem="Uj8-XZ-tbz" secondAttribute="trailing" id="6v4-fA-unH"/>
                                                 <constraint firstItem="IZw-qD-oPV" firstAttribute="leading" secondItem="JNd-Ba-qgb" secondAttribute="trailing" constant="10" id="Dq2-t4-rFh"/>
+                                                <constraint firstAttribute="bottom" secondItem="Uj8-XZ-tbz" secondAttribute="bottom" id="IEp-q0-u3z"/>
                                                 <constraint firstAttribute="bottom" secondItem="JNd-Ba-qgb" secondAttribute="bottom" constant="8" id="PZ1-TA-N0c"/>
+                                                <constraint firstItem="Uj8-XZ-tbz" firstAttribute="leading" secondItem="fA6-rs-O4f" secondAttribute="leading" id="Zmy-0C-ltF"/>
                                                 <constraint firstAttribute="trailing" secondItem="IZw-qD-oPV" secondAttribute="trailing" constant="8" id="fD5-tm-GTe"/>
+                                                <constraint firstItem="Uj8-XZ-tbz" firstAttribute="top" secondItem="fA6-rs-O4f" secondAttribute="top" id="gVp-Eq-bfm"/>
                                                 <constraint firstAttribute="bottom" secondItem="IZw-qD-oPV" secondAttribute="bottom" constant="8" id="m1P-W2-YM8"/>
                                                 <constraint firstItem="IZw-qD-oPV" firstAttribute="top" secondItem="fA6-rs-O4f" secondAttribute="top" constant="8" id="pfI-u0-Icc"/>
                                                 <constraint firstItem="JNd-Ba-qgb" firstAttribute="top" secondItem="fA6-rs-O4f" secondAttribute="top" constant="8" id="rL5-8z-P18"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="completionView" destination="Uj8-XZ-tbz" id="2aI-2R-eQi"/>
                                             <outlet property="descriptionLbl" destination="Spo-cr-9xC" id="F1m-b2-lv2"/>
                                             <outlet property="progressLbl" destination="IZw-qD-oPV" id="EHS-Wn-gQc"/>
                                             <outlet property="typeLbl" destination="8xJ-Mo-JRU" id="PGU-LB-Sib"/>
